@@ -46,11 +46,9 @@ def get_topic(reference):
     return None
 
 # initialize scripture generator
-st.title("THe Doctrine of Christ Scripture Generator")
+st.title("The Doctrine of Christ Scripture Generator")
 st.markdown("Created by Andrew Frandsen")
-st.write("\nInput a topic from the Doctrine of Christ and receive a scripture from Paul's Letters on that topic" \
-"\nType 'random' for a random scripture." \
-"\nType 'exit' to quit.")
+st.write("\nInput a topic from the Doctrine of Christ and receive a scripture from Paul's Letters on that topic or get a random scripture!")
 st.write("The Doctrine of Christ:", ", ".join([t.title() for t in scripture_data.keys()]))
 
 # continuously prompt user for topics and return random scriptures
@@ -98,37 +96,37 @@ if st.button("Get Scripture"):
         st.subheader(f"{display_topic}") 
         st.markdown(f"### {result_reference}")
         st.info(f'"{result_text}"')
-"""
-while True:
-    # get user input
-    user_topic = input("\nEnter a topic: ").strip().lower()
 
-    # give an random scripture for that topic
-    if user_topic in scripture_data:
-        options = scripture_data[user_topic]
-    
-        selection = random.choice(options)
-    
-        # separate reference and text
-        reference, text = selection
-        print(f"\n--- {reference} ---")
-        print(f'"{text}"')
-    elif user_topic == 'random':
-        all_scriptures = [scripture for scriptures in scripture_data.values() for scripture in scriptures]
-        selection = random.choice(all_scriptures)
 
-        # state topic
-        topic = get_topic(selection[0])
-        print(f"\n--- {topic} ---")
+# while True:
+#     # get user input
+#     user_topic = input("\nEnter a topic: ").strip().lower()
+
+#     # give an random scripture for that topic
+#     if user_topic in scripture_data:
+#         options = scripture_data[user_topic]
+    
+#         selection = random.choice(options)
+    
+#         # separate reference and text
+#         reference, text = selection
+#         print(f"\n--- {reference} ---")
+#         print(f'"{text}"')
+#     elif user_topic == 'random':
+#         all_scriptures = [scripture for scriptures in scripture_data.values() for scripture in scriptures]
+#         selection = random.choice(all_scriptures)
+
+#         # state topic
+#         topic = get_topic(selection[0])
+#         print(f"\n--- {topic} ---")
         
-        # separate reference and text
+#         # separate reference and text
         
-        reference, text = selection
-        print(f"\n--- {reference} ---")
-        print(f'"{text}"')
-    elif user_topic == 'exit':
-        print("Exiting the scripture generator. Goodbye!")
-        break
-    else:
-        print(f"\nSorry, no scriptures found for '{user_topic}'.")
-"""
+#         reference, text = selection
+#         print(f"\n--- {reference} ---")
+#         print(f'"{text}"')
+#     elif user_topic == 'exit':
+#         print("Exiting the scripture generator. Goodbye!")
+#         break
+#     else:
+#         print(f"\nSorry, no scriptures found for '{user_topic}'.")
